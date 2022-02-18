@@ -18,5 +18,10 @@ dependencies {
 }
 
 tasks.test {
-    useTestNG()
+    useTestNG {
+        suites("src/test/resources/testng.xml")
+        useDefaultListeners = true
+        outputDirectory = file("$projectDir/TestReports/TestNgReport/")
+    }
+    reports.html.outputLocation.set(file("$projectDir/TestReports/GradleReport/"))
 }
