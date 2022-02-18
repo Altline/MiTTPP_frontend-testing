@@ -11,8 +11,8 @@ import java.time.Duration
 abstract class HgShopTests(
     val baseUrl: String
 ) {
-    lateinit var browserType: Browser
-    lateinit var driver: WebDriver
+    protected lateinit var browserType: Browser
+    protected lateinit var driver: WebDriver
 
     @BeforeTest
     @Parameters("browser")
