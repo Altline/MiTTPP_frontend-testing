@@ -12,7 +12,7 @@ abstract class HgShopTests {
     protected lateinit var browserType: Browser
     protected lateinit var driver: WebDriver
 
-    @BeforeTest
+    @BeforeClass
     @Parameters("browser")
     fun setupBrowser(browser: String) {
         browserType = when (browser.lowercase()) {

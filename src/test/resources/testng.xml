@@ -6,6 +6,7 @@
         <parameter name="browser" value="Chrome"/>
         <classes>
             <class name="hr.ferit.dominikzivko.hgtest.GenericTests"/>
+            <class name="hr.ferit.dominikzivko.hgtest.CartTests"/>
         </classes>
     </test>
 
@@ -13,6 +14,7 @@
         <parameter name="browser" value="Firefox"/>
         <classes>
             <class name="hr.ferit.dominikzivko.hgtest.GenericTests"/>
+            <class name="hr.ferit.dominikzivko.hgtest.CartTests"/>
         </classes>
     </test>
 
@@ -20,6 +22,7 @@
         <parameter name="browser" value="Edge"/>
         <classes>
             <class name="hr.ferit.dominikzivko.hgtest.GenericTests"/>
+            <class name="hr.ferit.dominikzivko.hgtest.CartTests"/>
         </classes>
     </test>
 

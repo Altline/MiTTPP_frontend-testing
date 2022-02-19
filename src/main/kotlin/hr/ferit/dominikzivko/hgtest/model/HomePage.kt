@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver
 class HomePage(private val driver: WebDriver) {
 
     private val searchBarBy = By.name("q")
+    private val availableFeaturedArticleLinksBy = By.cssSelector(".product-availability.desktop-on > span a")
     private val featuredArticleLinksBy = By.cssSelector(".product-name a")
 
     fun findFeaturedArticleName(index: Int): String =
@@ -22,6 +23,11 @@ class HomePage(private val driver: WebDriver) {
 
     fun goToFeaturedArticle(index: Int): ArticlePage {
         driver.findElements(featuredArticleLinksBy)[index].sendKeys(Keys.ENTER)
+        return ArticlePage(driver)
+    }
+
+    fun goToAvailableFeaturedArticle(index: Int): ArticlePage {
+        driver.findElements(availableFeaturedArticleLinksBy)[index].sendKeys(Keys.ENTER)
         return ArticlePage(driver)
     }
 
