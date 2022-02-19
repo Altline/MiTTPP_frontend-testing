@@ -14,9 +14,24 @@ class CartItem(
 ) {
 
     private val nameBy = By.cssSelector(".text a")
+    private val amountBy = By.cssSelector(".mobile-off .quantity-input")
+    private val increaseButtonBy = By.cssSelector(".mobile-off .increase")
+    private val decreaseButtonBy = By.cssSelector(".mobile-off .decrease")
     private val removeButtonBy = By.cssSelector(".izbaci-desktop button")
 
     fun findName(): String = element.findElement(nameBy).text
+
+    fun findAmount(): Int {
+        return element.findElement(amountBy).getAttribute("value").toInt()
+    }
+
+    fun increaseAmount() {
+        element.findElement(increaseButtonBy).click()
+    }
+
+    fun decreaseAmount() {
+        element.findElement(decreaseButtonBy).click()
+    }
 
     fun removeFromCart() {
         val removeButton = element.findElement(removeButtonBy)
