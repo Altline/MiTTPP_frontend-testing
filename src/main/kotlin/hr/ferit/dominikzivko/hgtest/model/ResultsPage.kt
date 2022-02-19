@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver
 
 class ResultsPage(private val driver: WebDriver) {
 
-    private val searchResultsBy = By.xpath("//*[@id=\"search-results\"]/section")
+    private val searchResultsBy = By.cssSelector("#search-results > section")
 
     val searchResults get() = driver.findElements(searchResultsBy).map {
         ArticleResult(it)
