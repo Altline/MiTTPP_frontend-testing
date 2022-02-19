@@ -39,7 +39,7 @@ abstract class HgShopTests {
             Browser.FIREFOX -> FirefoxDriver()
             Browser.EDGE -> EdgeDriver()
         }.apply {
-            manage().timeouts().implicitlyWait(Duration.ofSeconds(10))
+            manage().timeouts().implicitlyWait(Duration.ofSeconds(5))
         }
     }
 
