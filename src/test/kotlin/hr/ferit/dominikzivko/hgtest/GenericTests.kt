@@ -20,8 +20,8 @@ class GenericTests : HgShopTests() {
     @Test
     fun `Featured articles accessible from home page`() {
         val homePage = HomePage.navigate(driver)
-        val articleName = homePage.findFirstFeaturedArticleName()
-        val articlePage = homePage.goToFirstFeaturedArticle()
+        val articleName = homePage.findFeaturedArticleName(0)
+        val articlePage = homePage.goToFeaturedArticle(0)
         assertEquals(articleName, articlePage.findArticleName())
     }
 }

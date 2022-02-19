@@ -9,8 +9,8 @@ class HomePage(private val driver: WebDriver) {
     private val searchBarBy = By.name("q")
     private val featuredArticleLinksBy = By.cssSelector(".product-name a")
 
-    fun findFirstFeaturedArticleName(): String =
-        driver.findElement(featuredArticleLinksBy).text
+    fun findFeaturedArticleName(index: Int): String =
+        driver.findElements(featuredArticleLinksBy)[index].text
 
     fun searchArticles(query: String): ResultsPage {
         driver.findElement(searchBarBy).run {
@@ -20,8 +20,8 @@ class HomePage(private val driver: WebDriver) {
         return ResultsPage(driver)
     }
 
-    fun goToFirstFeaturedArticle(): ArticlePage {
-        driver.findElement(featuredArticleLinksBy).sendKeys(Keys.RETURN)
+    fun goToFeaturedArticle(index: Int): ArticlePage {
+        driver.findElements(featuredArticleLinksBy)[index].sendKeys(Keys.ENTER)
         return ArticlePage(driver)
     }
 
