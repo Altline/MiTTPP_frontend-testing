@@ -12,15 +12,15 @@ class GenericTests : HgShopTests(HomePage.URL) {
         val searchQuery = "kabel apple usb-c"
         val homePage = HomePage(driver)
         val resultsPage = homePage.searchArticles(searchQuery)
-        val firstResult = resultsPage.searchResults.first()
-        assertTrue(firstResult.name.startsWith("kabel apple usb-c", ignoreCase = true))
+        val firstResult = resultsPage.findSearchResults().first()
+        assertTrue(firstResult.findName().startsWith("kabel apple usb-c", ignoreCase = true))
     }
 
     @Test
     fun `Featured articles accessible from home page`() {
         val homePage = HomePage(driver)
-        val articleName = homePage.firstFeaturedArticleName
+        val articleName = homePage.findFirstFeaturedArticleName()
         val articlePage = homePage.goToFirstFeaturedArticle()
-        assertEquals(articleName, articlePage.articleName)
+        assertEquals(articleName, articlePage.findArticleName())
     }
 }

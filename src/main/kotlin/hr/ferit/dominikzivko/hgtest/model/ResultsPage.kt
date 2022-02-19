@@ -7,7 +7,9 @@ class ResultsPage(private val driver: WebDriver) {
 
     private val searchResultsBy = By.cssSelector("#search-results > section")
 
-    val searchResults get() = driver.findElements(searchResultsBy).map {
-        ArticleResult(it)
+    fun findSearchResults(): List<ArticleResult> {
+        return driver.findElements(searchResultsBy).map {
+            ArticleResult(it)
+        }
     }
 }

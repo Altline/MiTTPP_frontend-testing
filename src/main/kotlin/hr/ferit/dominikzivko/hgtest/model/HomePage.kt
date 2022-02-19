@@ -9,7 +9,8 @@ class HomePage(private val driver: WebDriver) {
     private val searchBarBy = By.name("q")
     private val featuredArticleLinksBy = By.cssSelector(".product-name a")
 
-    val firstFeaturedArticleName get() = driver.findElement(featuredArticleLinksBy).text
+    fun findFirstFeaturedArticleName(): String =
+        driver.findElement(featuredArticleLinksBy).text
 
     fun searchArticles(query: String): ResultsPage {
         driver.findElement(searchBarBy).run {

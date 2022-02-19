@@ -7,5 +7,5 @@ class ArticleResult(private val element: WebElement) {
 
     private val nameBy = By.className("product-name")
 
-    val name: String get() = element.findElement(nameBy).text
+    fun findName(): String = element.findElement(nameBy).text
 }
