@@ -27,5 +27,10 @@ class HomePage(private val driver: WebDriver) {
 
     companion object {
         const val URL = "https://www.hgspot.hr/"
+
+        fun navigate(driver: WebDriver): HomePage {
+            driver.navigate().to(URL)
+            return HomePage(driver)
+        }
     }
 }

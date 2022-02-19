@@ -8,9 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver
 import org.testng.annotations.*
 import java.time.Duration
 
-abstract class HgShopTests(
-    val baseUrl: String
-) {
+abstract class HgShopTests {
     protected lateinit var browserType: Browser
     protected lateinit var driver: WebDriver
 
@@ -42,7 +40,6 @@ abstract class HgShopTests(
             Browser.EDGE -> EdgeDriver()
         }.apply {
             manage().timeouts().implicitlyWait(Duration.ofSeconds(10))
-            navigate().to(baseUrl)
         }
     }
 
