@@ -8,6 +8,7 @@ class CartPage(private val driver: WebDriver) {
     private val cartItemsBy = By.cssSelector(".kosarica-list > li")
 
     fun findCartItems(): List<CartItem> {
+        Thread.sleep(500)
         return driver.findElements(cartItemsBy).map {
             CartItem(it, driver)
         }
