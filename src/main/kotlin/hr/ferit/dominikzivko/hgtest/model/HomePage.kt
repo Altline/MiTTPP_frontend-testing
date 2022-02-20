@@ -25,8 +25,8 @@ class HomePage(private val driver: WebDriver) {
     }
 
     fun goToFirstCategory(): ResultsPage {
-        driver.findElement(firstCategoryLinkBy).click()
-        driver.findElement(firstSubcategoryLinkBy).click()
+        driver.findElement(firstCategoryLinkBy).sendKeys(Keys.ENTER)
+        driver.findElement(firstSubcategoryLinkBy).sendKeys(Keys.ENTER)
         return ResultsPage(driver)
     }
 

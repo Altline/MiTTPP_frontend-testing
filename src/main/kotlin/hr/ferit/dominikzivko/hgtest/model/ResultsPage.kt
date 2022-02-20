@@ -1,6 +1,7 @@
 package hr.ferit.dominikzivko.hgtest.model
 
 import org.openqa.selenium.By
+import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
 
 class ResultsPage(private val driver: WebDriver) {
@@ -15,7 +16,7 @@ class ResultsPage(private val driver: WebDriver) {
     }
 
     fun sortByPrice() {
-        driver.findElement(priceSortBy).click()
+        driver.findElement(priceSortBy).sendKeys(Keys.ENTER)
     }
 
     companion object {

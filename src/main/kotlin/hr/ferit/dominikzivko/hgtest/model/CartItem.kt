@@ -28,11 +28,11 @@ class CartItem(
     }
 
     fun increaseAmount() {
-        element.findElement(increaseButtonBy).click()
+        element.findElement(increaseButtonBy).sendKeys(Keys.ENTER)
     }
 
     fun decreaseAmount() {
-        element.findElement(decreaseButtonBy).click()
+        element.findElement(decreaseButtonBy).sendKeys(Keys.ENTER)
     }
 
     fun removeFromCart() {

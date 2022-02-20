@@ -1,6 +1,7 @@
 package hr.ferit.dominikzivko.hgtest.model
 
 import org.openqa.selenium.By
+import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
 
 class ArticlePage(private val driver: WebDriver) {
@@ -18,9 +19,9 @@ class ArticlePage(private val driver: WebDriver) {
             // sleeping because firefox for some reason doesn't register the click when done immediately
             // (selenium waits don't seem to work)
             Thread.sleep(500)
-            it.first().click()
+            it.first().sendKeys(Keys.ENTER)
             Thread.sleep(100)
-            driver.findElement(continueShoppingButtonBy).click()
+            driver.findElement(continueShoppingButtonBy).sendKeys(Keys.ENTER)
             Thread.sleep(100)
         }
     }
