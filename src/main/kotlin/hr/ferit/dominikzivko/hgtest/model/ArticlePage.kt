@@ -15,10 +15,13 @@ class ArticlePage(private val driver: WebDriver) {
 
     fun addToCart() {
         driver.findElements(buyButtonBy).takeIf { it.isNotEmpty() }?.let {
-            // Firefox for some reason doesn't register the click when done immediately
+            // sleeping because firefox for some reason doesn't register the click when done immediately
+            // (selenium waits don't seem to work)
             Thread.sleep(500)
             it.first().click()
+            Thread.sleep(100)
             driver.findElement(continueShoppingButtonBy).click()
+            Thread.sleep(100)
         }
     }
 }
