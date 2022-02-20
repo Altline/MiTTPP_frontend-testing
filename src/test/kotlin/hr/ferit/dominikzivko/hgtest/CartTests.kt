@@ -8,7 +8,6 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class CartTests : HgShopTests() {
-
     @Test
     fun `Add article to cart`() {
         val homePage = HomePage.navigate(driver)

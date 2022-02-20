@@ -6,15 +6,14 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class GenericTests : HgShopTests() {
-
     @Test
     fun `Search returns result`() {
         val searchQuery = "kabel apple usb-c"
-
         val homePage = HomePage.navigate(driver)
         val resultsPage = homePage.searchArticles(searchQuery)
         val firstResult = resultsPage.findResults().first()
-        assertTrue(firstResult.findName().startsWith("kabel apple usb-c", ignoreCase = true))
+        val firstResultName = firstResult.findName()
+        assertTrue(firstResultName.startsWith("kabel apple usb-c", ignoreCase = true))
     }
 
     @Test

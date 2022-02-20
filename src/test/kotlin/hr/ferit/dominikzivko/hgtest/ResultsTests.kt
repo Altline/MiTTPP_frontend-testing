@@ -7,7 +7,6 @@ import kotlin.test.assertContentEquals
 import kotlin.test.assertTrue
 
 class ResultsTests : HgShopTests() {
-
     @Test
     fun `Category page accessible from home page`() {
         val homePage = HomePage.navigate(driver)

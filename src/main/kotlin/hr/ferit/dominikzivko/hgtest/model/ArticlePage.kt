@@ -9,7 +9,9 @@ class ArticlePage(private val driver: WebDriver) {
     private val buyButtonBy = By.cssSelector(".buy a")
     private val continueShoppingButtonBy = By.cssSelector("#kosaricaAdd .kupovina")
 
-    fun findArticleName(): String = driver.findElement(articleNameBy).text
+    fun findArticleName(): String {
+        return driver.findElement(articleNameBy).text
+    }
 
     fun addToCart() {
         driver.findElements(buyButtonBy).takeIf { it.isNotEmpty() }?.let {

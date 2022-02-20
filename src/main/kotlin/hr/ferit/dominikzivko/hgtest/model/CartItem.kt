@@ -19,7 +19,9 @@ class CartItem(
     private val decreaseButtonBy = By.cssSelector(".mobile-off .decrease")
     private val removeButtonBy = By.cssSelector(".izbaci-desktop button")
 
-    fun findName(): String = element.findElement(nameBy).text
+    fun findName(): String {
+        return element.findElement(nameBy).text
+    }
 
     fun findAmount(): Int {
         return element.findElement(amountBy).getAttribute("value").toInt()
@@ -34,8 +36,7 @@ class CartItem(
     }
 
     fun removeFromCart() {
-        val removeButton = element.findElement(removeButtonBy)
-        removeButton.sendKeys(Keys.ENTER)
+        element.findElement(removeButtonBy).sendKeys(Keys.ENTER)
         driver.wait(Duration.ofSeconds(2), ExpectedConditions.stalenessOf(element))
     }
 }

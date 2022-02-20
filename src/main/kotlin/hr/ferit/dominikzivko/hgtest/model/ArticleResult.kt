@@ -8,7 +8,11 @@ class ArticleResult(private val element: WebElement) {
     private val nameBy = By.className("product-name")
     private val priceBy = By.cssSelector(".product-price .value")
 
-    fun findName(): String = element.findElement(nameBy).text
+    fun findName(): String {
+        return element.findElement(nameBy).text
+    }
 
-    fun findPrice(): String = element.findElement(priceBy).text
+    fun findPrice(): String {
+        return element.findElement(priceBy).text
+    }
 }
