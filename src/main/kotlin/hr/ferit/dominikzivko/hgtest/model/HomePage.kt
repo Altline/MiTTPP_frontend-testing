@@ -26,6 +26,8 @@ class HomePage(private val driver: WebDriver) {
 
     fun goToFirstCategory(): ResultsPage {
         driver.findElement(firstCategoryLinkBy).sendKeys(Keys.ENTER)
+        // Firefox sometimes fails without sleep
+        Thread.sleep(200)
         driver.findElement(firstSubcategoryLinkBy).sendKeys(Keys.ENTER)
         return ResultsPage(driver)
     }

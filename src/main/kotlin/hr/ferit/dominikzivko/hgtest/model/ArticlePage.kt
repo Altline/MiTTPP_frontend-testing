@@ -18,11 +18,11 @@ class ArticlePage(private val driver: WebDriver) {
         driver.findElements(buyButtonBy).takeIf { it.isNotEmpty() }?.let {
             // sleeping because firefox for some reason doesn't register the click when done immediately
             // (selenium waits don't seem to work)
-            Thread.sleep(500)
+            Thread.sleep(300)
             it.first().sendKeys(Keys.ENTER)
             Thread.sleep(100)
             driver.findElement(continueShoppingButtonBy).sendKeys(Keys.ENTER)
-            Thread.sleep(100)
+            Thread.sleep(500)
         }
     }
 }
