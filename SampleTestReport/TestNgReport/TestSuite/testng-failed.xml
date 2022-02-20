@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" name="Failed suite [TestSuite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test name="FirefoxTest(failed)" verbose="0">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="hr.ferit.dominikzivko.hgtest.CartTests">
+        <methods>
+          <include name="setupBrowser"/>
+          <include name="cleanup"/>
+          <include name="Modify article amount"/>
+          <include name="setupPage"/>
+        </methods>
+      </class> <!-- hr.ferit.dominikzivko.hgtest.CartTests -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->
