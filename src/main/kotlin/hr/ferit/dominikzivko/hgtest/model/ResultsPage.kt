@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver
 
 class ResultsPage(private val driver: WebDriver) {
 
-    private val searchResultsBy = By.cssSelector("#search-results > section")
+    private val resultsBy = By.className("product-hg-horinzontal-view")
 
-    fun findSearchResults(): List<ArticleResult> {
-        return driver.findElements(searchResultsBy).map {
+    fun findResults(): List<ArticleResult> {
+        return driver.findElements(resultsBy).map {
             ArticleResult(it)
         }
     }

@@ -13,7 +13,7 @@ class GenericTests : HgShopTests() {
 
         val homePage = HomePage.navigate(driver)
         val resultsPage = homePage.searchArticles(searchQuery)
-        val firstResult = resultsPage.findSearchResults().first()
+        val firstResult = resultsPage.findResults().first()
         assertTrue(firstResult.findName().startsWith("kabel apple usb-c", ignoreCase = true))
     }
 
