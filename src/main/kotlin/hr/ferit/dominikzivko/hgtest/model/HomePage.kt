@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver
 class HomePage(private val driver: WebDriver) {
 
     private val searchBarBy = By.name("q")
+    private val firstCategoryLinkBy = By.cssSelector("nav.container li:nth-of-type(1) > a")
+    private val firstSubcategoryLinkBy = By.cssSelector("nav.container li:nth-of-type(1) nav:nth-of-type(1) > a:nth-of-type(1)")
     private val availableFeaturedArticleLinksBy = By.cssSelector(".product-availability.desktop-on > span a")
     private val featuredArticleLinksBy = By.cssSelector(".product-name a")
 
@@ -18,6 +20,12 @@ class HomePage(private val driver: WebDriver) {
             sendKeys(query)
             submit()
         }
+        return ResultsPage(driver)
+    }
+
+    fun goToFirstCategory(): ResultsPage {
+        driver.findElement(firstCategoryLinkBy).click()
+        driver.findElement(firstSubcategoryLinkBy).click()
         return ResultsPage(driver)
     }
 
